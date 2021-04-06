@@ -27,8 +27,17 @@ const routes: Array<RouteRecordRaw> = [
         path: 'tab3',
         component: () => import('@/views/Tab3.vue')
       }
+      
     ]
-  }
+  },
+  {
+    path: '/drinks-by-ingredient/:ingredient',
+    component: () => import('@/views/DrinksByIngredients.vue')
+  },
+  {
+    path: '/drink/:id',
+    component: () => import('@/views/Drink.vue')
+  },
 ]
 
 const router = createRouter({

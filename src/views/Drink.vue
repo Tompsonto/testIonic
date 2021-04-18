@@ -2,6 +2,9 @@
   <ion-page>
     <ion-header>
       <ion-toolbar>
+        <ion-buttons slot="start">
+             <ion-back-button></ion-back-button>
+         </ion-buttons>
         <ion-title>{{state.drink.strDrink}} </ion-title>
       </ion-toolbar>
     </ion-header>
@@ -21,7 +24,7 @@
 </template>
 
 <script lang="ts">
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonBackButton } from '@ionic/vue';
 import DrinkCard from '@/components/DrinkCard.vue'
 import {reactive} from "vue";
 import {useRoute} from "vue-router";
@@ -32,7 +35,7 @@ import IDrinkDetails from '../interfaces/IDrinksDetails'
 
 export default{
     name: "Drink",
-    components :{ IonPage, IonHeader, IonToolbar, IonTitle, IonContent, DrinkCard },
+    components :{ IonPage, IonHeader, IonToolbar, IonTitle, IonContent, DrinkCard, IonButtons, IonBackButton },
     setup(){
         const route = useRoute();
         const drinkId = route.params.id as string;
@@ -61,3 +64,11 @@ export default{
     }
 }
 </script>
+
+<style scoped>
+.loading-center{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+</style>

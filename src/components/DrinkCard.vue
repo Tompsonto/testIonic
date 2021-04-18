@@ -1,7 +1,8 @@
 <template>
-          <ion-card>
+      <ion-card>
         <img :src="drink.strDrinkThumb">
         <ion-card-header>
+          
         <ion-card-subtitle>
           {{drink.strCategory}} | Served in {{drink.strGlass}}
         </ion-card-subtitle>
